@@ -1,0 +1,72 @@
+/* External CSS (lowest priority in cascade compared to internal and inline) */
+
+/* Global resets & base tokens */
+:root {
+  --radius: 1.25rem;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  line-height: 1.6;
+}
+
+/* Sections */
+.section {
+  scroll-margin-top: 80px; /* for sticky navbar */
+}
+
+.section-title {
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+/* Accent text (will be overridden by internal if conflicts) */
+.accent {
+  color: #6f42c1; /* purple; internal CSS changes this to Bootstrap primary */
+}
+
+/* Hero image polish */
+.hero-img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Skills list cards */
+.skills-list li {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Project cards */
+.project-card {
+  border: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(13, 110, 253, 0.15);
+}
+
+/* Example of descendant + class selector */
+.navbar .nav-link.btn {
+  border-radius: 999px;
+}
+
+/* Make images nicer on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
